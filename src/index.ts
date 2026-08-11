@@ -85,6 +85,11 @@ export async function startMCPServer() {
         version,
     });
 
+    const originalRegister = server.registerTool.bind(server);
+    (server as any).registerTool = (name: string, ...args: any[]) => {
+        return originalRegister(name.replace(/\./g, '_'), ...args);
+    };
+
     // 3. Register tools directly on the server
     server.registerTool(
         "auth.clear",
