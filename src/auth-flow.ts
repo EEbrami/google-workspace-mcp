@@ -43,7 +43,7 @@ export async function runAuthFlow(): Promise<void> {
     console.log(
       '\nYou can now use this server with your MCP client:',
     );
-    console.log('  npx -y @presto-ai/google-workspace-mcp\n');
+    console.log('  npx -y @eebrami/google-workspace-mcp\n');
 
     logToFile('Authentication flow completed successfully');
     process.exit(0);

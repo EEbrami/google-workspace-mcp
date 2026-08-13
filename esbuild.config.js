@@ -11,11 +11,14 @@ const fs = require('node:fs');
 async function build() {
   try {
     await esbuild.build({
-      entryPoints: ['src/index.ts'],
+      entryPoints: {
+        'index': 'src/index.ts',
+        'auth-flow': 'src/auth-flow.ts'
+      },
       bundle: true,
       platform: 'node',
       target: 'node16',
-      outfile: 'dist/index.js',
+      outdir: 'dist',
       minify: true,
       sourcemap: true,
       // Replace 'open' package with our wrapper
@@ -24,7 +27,8 @@ async function build() {
       },
       // External packages that shouldn't be bundled
       external: [
-        'jsdom'
+        'jsdom',
+        'keytar'
       ],
       // Add a loader for .node files
       loader: {

@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
 /**
- * CLI entry point for @presto-ai/google-workspace-mcp
+ * CLI entry point for @eebrami/google-workspace-mcp
  *
  * Modes:
- * - npx @presto-ai/google-workspace-mcp --auth    : Explicit authentication
- * - npx @presto-ai/google-workspace-mcp           : Start MCP server (default)
+ * - npx @eebrami/google-workspace-mcp --auth    : Explicit authentication
+ * - npx @eebrami/google-workspace-mcp           : Start MCP server (default)
  *
  * Auto-authentication:
  * If credentials don't exist and the terminal is interactive,
@@ -92,7 +92,7 @@ async function main() {
       console.error('❌ No valid credentials found.\n');
       console.error('For automated/non-interactive environments:');
       console.error('1. Run authentication on an interactive machine:');
-      console.error('   npx @presto-ai/google-workspace-mcp --auth\n');
+      console.error('   npx @eebrami/google-workspace-mcp --auth\n');
       console.error('2. Copy credentials to your environment:');
       console.error('   macOS/Linux: ~/.config/google-workspace-mcp/');
       console.error('   Windows: %APPDATA%/google-workspace-mcp/\n');
